@@ -16,13 +16,15 @@ namespace Elemendide_App
         Label lbl;
         ImageButton img;
         Image img1, img2, img3, img4, img5, img6;
+        StackLayout st;
+
+
         public Data()
         {
             lbl = new Label()
             {
                 Text = "AjaPlaan"
             };
-
 
             picker = new TimePicker()
             {
@@ -38,8 +40,9 @@ namespace Elemendide_App
             img.Clicked += Img_Clicked;
 
 
-
-            this.Content = new StackLayout { Children = { picker, img, img1, img2, img3, img4, img5, img6, lbl } };
+            st = new StackLayout { Children = { picker , img , lbl } };
+            Content = st;
+            
 
 
 
@@ -48,7 +51,6 @@ namespace Elemendide_App
 
         private void Img_Clicked(object sender, EventArgs e)
         {
-
             DisplayAlert("Hea Pilt", "Gelik", "Jah!");
         }
 
@@ -62,38 +64,40 @@ namespace Elemendide_App
                 if (time == 7)
                 {
                     lbl.Text = "Kell 7 hommikul";
-                    img1 = new Image { Source = "_7.png" };
-                    img.IsVisible = false;
+                    /*img1 = new Image { Source = "_7.png" };*/
+                    img = new ImageButton {Source ="_7png"};
+                    
+
                 }
                 else if (time == 8)
                 {
                     lbl.Text = "Kell 8 hommikul";
                     img2 = new Image { Source = "_8.jpg" };
-                    img1.IsVisible = false;
+                    
                 }
                 else if (time == 9)
                 {
                     lbl.Text = "Kell 9 hommikul";
                     img3 = new Image { Source = "_9.jpg" };
-                    img2.IsVisible = false;
+                    
                 }
                 else if (time == 10)
                 {
                     lbl.Text = "Kell 10 hommikul";
                     img4 = new Image { Source = "_10.jpg" };
-                    img3.IsVisible = false;
+                    
                 }
                 else if (time == 11)
                 {
                     lbl.Text = "Kell 11 hommikul";
                     img5 = new Image { Source = "_11.jpg" };
-                    img4.IsVisible = false;
+                    
                 }
                 else if (time == 12)
                 {
                     lbl.Text = "Kell 12 hommikul";
                     img6 = new Image { Source = "_12.jpg" };
-                    img5.IsVisible = false;
+                    
                 }
 
             }
